@@ -264,7 +264,7 @@ export default function ScreenerPage() {
         </p>
       )}
 
-      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-10 bg-gradient-to-t from-bg via-bg to-transparent pt-10">
+      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-10 border-t border-line bg-bg pt-4">
         <div className="pointer-events-auto mx-auto max-w-2xl px-5 pb-5">
           <div className="mb-2 h-1.5 overflow-hidden rounded-full bg-line">
             <div

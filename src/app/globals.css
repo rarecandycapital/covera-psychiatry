@@ -26,10 +26,10 @@
   --ok: #2e7355;
   --ok-soft: #e8f1ec;
 
-  --border: #e7e1d7;
+  --border: #e0d9cc;
 
-  /* One radius everywhere. */
-  --radius: 16px;
+  /* Crisp, near-square. Swiss editorial, not soft-UI. */
+  --radius: 4px;
   --shadow-soft: 0 1px 2px rgba(44, 44, 41, 0.04),
     0 8px 24px -12px rgba(44, 44, 41, 0.12);
 }
@@ -56,6 +56,7 @@
 
   --font-sans: var(--font-inter);
   --font-serif: var(--font-fraunces);
+  --font-mono: var(--font-plex-mono);
 
   --radius-card: var(--radius);
 }
@@ -74,9 +75,83 @@ body {
 .font-display {
   font-family: var(--font-fraunces), ui-serif, Georgia, serif;
   font-optical-sizing: auto;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.028em;
+  line-height: 0.98;
 }
 
-.shadow-soft {
-  box-shadow: var(--shadow-soft);
+/* Display sizes get progressively tighter leading as they scale up. */
+.display-hero {
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.display-section {
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.display-metric {
+  font-size: clamp(2.75rem, 5vw, 3.75rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+/* Mono label used for section numbering in the left margin. */
+.label-mono {
+  font-family: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Scroll reveal. Short, small travel — it should read as the page settling, not
+   as a slide deck transition. */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Arrow nudge on the two entry points. */
+.nudge {
+  display: inline-block;
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .nudge {
+  transform: translateX(6px);
+}
+
+/* A hairline that draws itself across the card on hover. */
+.underline-draw {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .underline-draw {
+  background-size: 100% 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .nudge,
+  .underline-draw {
+    transition: none;
+  }
 }
