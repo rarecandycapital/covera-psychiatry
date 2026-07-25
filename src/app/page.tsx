@@ -3,23 +3,23 @@ import Link from "next/link";
 const metrics = [
   {
     figure: "100+",
-    label: "insurers reachable",
-    note: "Payers we can query for real-time eligibility through our clearinghouse connection.",
+    label: "insurers we can query",
+    note: "Payers reachable for real-time eligibility through our clearinghouse connection.",
   },
   {
     figure: "~170M",
-    label: "covered lives in network reach",
-    note: "Combined enrollment across those payers — the population whose coverage we can verify.",
+    label: "covered lives in reach",
+    note: "Combined enrollment across those payers. That is the population whose benefits we can actually verify.",
   },
   {
     figure: "90 sec",
-    label: "to a verified answer",
-    note: "From landing on the site to knowing your copay. No account, no email, no card.",
+    label: "to a real number",
+    note: "Landing on the site to knowing your copay. No account, no email, no card.",
   },
   {
     figure: "0",
     label: "prescriptions written",
-    note: "There is no prescribing surface in this product. That is the strategy, not a gap.",
+    note: "Covera has no prescribing surface at all. We think that is the whole point.",
   },
 ];
 
@@ -27,17 +27,17 @@ const steps = [
   {
     n: "01",
     t: "Coverage, before anything else",
-    d: "State, plan, member ID. We send a real X12 270 eligibility request to the payer and return the actual mental-health copay from their response — not an estimate, not a range.",
+    d: "You pick your state and your plan. We fire a real X12 270 eligibility request at the payer and read the mental-health copay straight out of their response. Whatever number comes back is the number we show you.",
   },
   {
     n: "02",
     t: "Screening that gets scored",
-    d: "PHQ-9 and GAD-7, the same instruments a psychiatrist would hand you on paper. Scored against published severity bands, and shown to you rather than hidden behind a portal login.",
+    d: "PHQ-9 and GAD-7. Same instruments a psychiatrist hands you on a clipboard, scored against the published severity bands. You see your own scores, which is rarer than it should be.",
   },
   {
     n: "03",
-    t: "A match you can audit",
-    d: "Three psychiatrists licensed in your state, contracted with your specific plan, treating what you screened for. Every card shows the four checks it passed. No relevance score.",
+    t: "A shortlist you can argue with",
+    d: "Three psychiatrists, and next to each one the four checks it passed: state licence, your plan, your presenting concern, an actual open slot. If you disagree with a match you can see exactly which check you disagree with.",
   },
 ];
 
@@ -47,18 +47,22 @@ export default function Home() {
       {/* Hero */}
       <section className="mx-auto max-w-[1100px] px-5 pb-16 pt-16 sm:px-8 sm:pb-24 sm:pt-24">
         <p className="text-[12.5px] font-semibold uppercase tracking-[0.16em] text-sage">
-          The intake layer for in-network psychiatry
+          Insurance-first psychiatry
         </p>
         <h1 className="font-display mt-5 max-w-4xl text-[2.6rem] font-semibold leading-[1.04] sm:text-[3.6rem] lg:text-[4rem]">
-          Psychiatry is the least in-network specialty in American medicine.
-          We&apos;re fixing the reason why.
+          Most psychiatrists stopped taking insurance. The reason is boring, and
+          fixable.
         </h1>
         <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft sm:text-xl">
-          Not because there aren&apos;t enough psychiatrists — because taking
-          insurance costs them more than it pays. Covera removes that cost on
-          both sides: patients see their copay before they sign up, and
-          clinicians receive an intake that&apos;s already verified, scored, and
-          written.
+          Psychiatry has the lowest insurance-acceptance rate of any medical
+          specialty. It isn&apos;t greed. Verifying benefits, chasing intake
+          forms, and rebuilding a history the patient already told somebody else
+          costs more per visit than the network rate pays back. So the rational
+          move is to go cash-pay, and thousands of clinicians have.
+        </p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft sm:text-xl">
+          Covera does that administrative work up front, for both sides of the
+          appointment.
         </p>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -68,10 +72,16 @@ export default function Home() {
           >
             Check my coverage
           </Link>
-          <span className="text-sm text-ink-faint">
-            Takes about 90 seconds · No account, no card, no email
-          </span>
+          <Link
+            href="/for-clinicians"
+            className="rounded-card border border-line bg-surface px-8 py-4 text-center text-base font-medium transition-colors hover:bg-brand-soft"
+          >
+            I&apos;m a clinician
+          </Link>
         </div>
+        <p className="mt-4 text-sm text-ink-faint">
+          About 90 seconds. No account, no card, no email.
+        </p>
 
         <div className="mt-10 flex flex-wrap gap-x-7 gap-y-2.5 text-[13.5px] text-ink-soft">
           {[
@@ -112,62 +122,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The two-sided argument */}
+      {/* Two sides */}
       <section className="mx-auto max-w-[1100px] px-5 py-20 sm:px-8">
         <p className="text-[12.5px] font-semibold uppercase tracking-[0.16em] text-sage">
-          Two problems, not one
+          Both sides of the appointment
         </p>
         <h2 className="font-display mt-4 max-w-3xl text-[2rem] font-semibold leading-[1.12] sm:text-[2.6rem]">
-          A directory matches you to whoever is left. We change how many are
-          left.
+          Directories help you find whoever is still in network. We work on how
+          many are still in network.
         </h2>
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
           <div className="rounded-card border border-line bg-surface p-7 shadow-soft sm:p-9">
             <p className="text-[12.5px] font-semibold uppercase tracking-[0.14em] text-brand">
-              Demand side
+              For patients
             </p>
             <h3 className="font-display mt-3 text-2xl font-semibold">
-              Patients find out about money first
+              You find out about the money first
             </h3>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              Every competitor makes you create an account and answer twenty
-              questions before revealing that nobody takes your plan. It is the
-              single most demoralizing moment in mental health care, and it is
-              engineered — the questions come first because the questions are
-              how they keep you.
+              Everywhere else you make an account, answer twenty questions,
+              upload a photo of your card, and somewhere around minute eighteen
+              you learn nobody takes your plan. That ordering is not an
+              accident. The questions come first because the questions are how
+              they keep you.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              We inverted it. The eligibility check is the first screen, it
-              costs you nothing, and if the answer is bad you find out in ninety
-              seconds instead of twenty minutes.
+              We put the eligibility check on screen one. It costs you nothing,
+              and if the answer is bad you get it in ninety seconds instead of
+              twenty minutes.
             </p>
+            <Link
+              href="/coverage"
+              className="mt-5 inline-flex text-[15px] font-medium text-brand underline underline-offset-4"
+            >
+              Check your coverage
+            </Link>
           </div>
 
           <div className="rounded-card border border-line bg-surface p-7 shadow-soft sm:p-9">
             <p className="text-[12.5px] font-semibold uppercase tracking-[0.14em] text-accent">
-              Supply side
+              For clinicians
             </p>
             <h3 className="font-display mt-3 text-2xl font-semibold">
-              Clinicians get an intake that&apos;s already done
+              The intake arrives already done
             </h3>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              Psychiatrists drop insurance because the administrative cost of a
-              covered visit — verifying benefits, chasing intake forms,
-              rebuilding a history that the patient already told someone else —
-              exceeds the reimbursement difference. Matching patients faster
-              does nothing about that.
+              Ask a psychiatrist why they left insurance and you will hear about
+              paperwork long before you hear about rates. Every covered visit
+              carries a tail of verification, forms, and re-documentation, and
+              that tail is what makes the network rate not worth it.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              The same intake the patient completes arrives as a finished
-              pre-visit note: eligibility verified, scores banded, most-endorsed
-              items surfaced. Lower the cost of accepting insurance and the
-              in-network pool stops shrinking.
+              The intake a patient finishes here lands on the clinician side as
+              a pre-visit note. Eligibility already verified, screeners already
+              scored, the items they endorsed most already pulled out. Make
+              accepting insurance cheaper and the in-network pool stops
+              shrinking.
             </p>
             <Link
-              href="/clinician"
+              href="/for-clinicians"
               className="mt-5 inline-flex text-[15px] font-medium text-brand underline underline-offset-4"
             >
-              See the clinician view
+              How it works for clinicians
             </Link>
           </div>
         </div>
@@ -206,12 +222,12 @@ export default function Home() {
           Why restraint
         </p>
         <h2 className="font-display mt-4 max-w-3xl text-[2rem] font-semibold leading-[1.12] sm:text-[2.6rem]">
-          The two places we deliberately refuse to convert.
+          Two places we deliberately refuse to convert you.
         </h2>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          Every company that collapsed in this category collapsed by converting
-          harder. We built the opposite constraint into the product, where a
-          policy document cannot quietly be revised away.
+          Everyone who blew up in this category blew up by converting harder. We
+          wrote the opposite constraint into the software, where a policy
+          document cannot quietly get revised at 2am.
         </p>
 
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
@@ -220,11 +236,14 @@ export default function Home() {
               We stop the funnel for anyone at risk
             </h3>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              If the screening indicates thoughts of self-harm, the intake ends.
-              No booking button renders, the matching screen refuses to load,
-              and crisis resources take the page — including for anyone who
-              types the URL directly. Someone in crisis needs a person on the
-              phone now, not an appointment three weeks out.
+              Answer above zero on the self-harm item and the intake ends there.
+              No booking button renders. The matching screen refuses to load,
+              including if you type the URL in directly. Crisis resources take
+              the whole page instead.
+            </p>
+            <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
+              Somebody in that position needs a person on the phone tonight, not
+              a calendar invite for the 14th.
             </p>
             <Link
               href="/crisis"
@@ -239,16 +258,16 @@ export default function Home() {
               We do not prescribe anything
             </h3>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              There is no prescribing surface anywhere in this product —
-              screening and clinician matching only. The telepsychiatry
-              companies that imploded did it on prescribing volume, because
-              once prescriptions are the revenue line, every incentive bends
-              toward writing more of them.
+              There is no prescribing surface in this product. Screening and
+              matching, and that is the entire scope. The telepsychiatry
+              companies that collapsed all collapsed on prescribing volume,
+              because once scripts are the revenue line every incentive in the
+              building bends toward writing more of them.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              Treatment decisions belong to the psychiatrist you are matched
-              with, in the room, after they have met you. We are the layer that
-              gets you into that room covered.
+              What to prescribe is the psychiatrist&apos;s call, in the room,
+              after they have met you. Our job ends at getting you into that
+              room covered.
             </p>
           </div>
         </div>
@@ -262,7 +281,7 @@ export default function Home() {
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[16.5px] leading-relaxed text-white/75">
             One screen, one real eligibility check, one honest number. Before
-            you give us anything.
+            you hand us anything.
           </p>
           <Link
             href="/coverage"

@@ -27,7 +27,25 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-10 space-y-3 border-t border-line pt-8 text-[13px] leading-relaxed text-ink-soft">
+        <nav className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-8 text-[13.5px] font-medium">
+          <Link href="/" className="text-ink-soft hover:text-ink">
+            Home
+          </Link>
+          <Link href="/coverage" className="text-ink-soft hover:text-ink">
+            For patients
+          </Link>
+          <Link href="/for-clinicians" className="text-ink-soft hover:text-ink">
+            For clinicians
+          </Link>
+          <Link href="/clinician" className="text-ink-soft hover:text-ink">
+            Sample pre-visit note
+          </Link>
+          <Link href="/crisis" className="text-danger hover:opacity-80">
+            Crisis resources
+          </Link>
+        </nav>
+
+        <div className="mt-8 space-y-3 text-[13px] leading-relaxed text-ink-soft">
           <p className="font-medium text-ink">
             Hackathon prototype — not a medical service.
           </p>

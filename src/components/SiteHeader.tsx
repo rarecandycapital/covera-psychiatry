@@ -15,6 +15,21 @@ export function SiteHeader() {
             Covera
           </span>
         </Link>
+        <nav className="hidden items-center gap-6 md:flex">
+          <Link
+            href="/coverage"
+            className="text-[14px] font-medium text-ink-soft transition-colors hover:text-ink"
+          >
+            For patients
+          </Link>
+          <Link
+            href="/for-clinicians"
+            className="text-[14px] font-medium text-ink-soft transition-colors hover:text-ink"
+          >
+            For clinicians
+          </Link>
+        </nav>
+
         <div className="flex items-center gap-2 sm:gap-3">
           <Link
             href="/crisis"
