@@ -47,7 +47,7 @@ export default function Home() {
     <div>
       {/* Hero */}
       <section className="mx-auto max-w-[1100px] px-5 pb-16 pt-14 sm:px-8 sm:pb-24 sm:pt-20">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+        <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-16">
           <div>
             <p className="text-[12.5px] font-semibold uppercase tracking-[0.16em] text-sage">
               Insurance-first psychiatry
@@ -56,46 +56,46 @@ export default function Home() {
               Most psychiatrists stopped taking insurance. The reason is boring,
               and fixable.
             </h1>
-            <p className="mt-7 text-lg leading-relaxed text-ink-soft">
+          </div>
+          <div>
+            <p className="text-[17px] leading-relaxed text-ink-soft">
               Psychiatry has the lowest insurance-acceptance rate of any medical
               specialty. It isn&apos;t greed. Verifying benefits, chasing intake
               forms, and rebuilding a history the patient already told somebody
-              else costs more per visit than the network rate pays back. So the
-              rational move is to go cash-pay, and thousands of clinicians have.
+              else costs more per visit than the network rate pays back.
             </p>
-            <p className="mt-5 text-lg leading-relaxed text-ink-soft">
+            <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
               Covera does that administrative work up front, for both sides of
               the appointment.
             </p>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/coverage"
-                className="rounded-card bg-brand px-8 py-4 text-center text-base font-medium text-white shadow-soft transition-colors hover:bg-brand-hover"
-              >
-                Check my coverage
-              </Link>
-              <Link
-                href="/for-clinicians"
-                className="rounded-card border border-line bg-surface px-8 py-4 text-center text-base font-medium transition-colors hover:bg-brand-soft"
-              >
-                I&apos;m a clinician
-              </Link>
-            </div>
-            <p className="mt-4 text-sm text-ink-faint">
-              About 90 seconds. No account, no card, no email.
-            </p>
           </div>
-
-          <Figure
-            src="/images/hero-patient.webp"
-            alt="A woman at a kitchen table in morning light, checking her phone"
-            ratio="4 / 5"
-            priority
-            note="Hero: woman early 30s at kitchen table, morning light, calm and relieved"
-            className="shadow-soft"
-          />
         </div>
+
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <Link
+            href="/coverage"
+            className="rounded-card bg-brand px-8 py-4 text-center text-base font-medium text-white shadow-soft transition-colors hover:bg-brand-hover"
+          >
+            Check my coverage
+          </Link>
+          <Link
+            href="/for-clinicians"
+            className="rounded-card border border-line bg-surface px-8 py-4 text-center text-base font-medium transition-colors hover:bg-brand-soft"
+          >
+            I&apos;m a clinician
+          </Link>
+          <span className="self-center text-sm text-ink-faint sm:ml-2">
+            About 90 seconds. No account, no card, no email.
+          </span>
+        </div>
+
+        <Figure
+          src="/images/hero-patient.webp"
+          alt="A woman at a kitchen table in morning light, checking her phone"
+          ratio="3 / 2"
+          priority
+          className="mt-12 shadow-soft"
+        />
 
         <div className="mt-14 flex flex-wrap gap-x-7 gap-y-2.5 border-t border-line pt-7 text-[13.5px] text-ink-soft">
           {[
@@ -150,8 +150,7 @@ export default function Home() {
             <Figure
               src="/images/patient-hands.webp"
               alt="Hands holding a phone at a desk with an insurance card nearby"
-              ratio="16 / 10"
-              note="Hands holding phone, insurance card on table, no face"
+              ratio="4 / 5"
               className="mb-7"
             />
             <p className="text-[12.5px] font-semibold uppercase tracking-[0.14em] text-brand">
@@ -183,9 +182,8 @@ export default function Home() {
           <div className="rounded-card border border-line bg-surface p-7 shadow-soft sm:p-9">
             <Figure
               src="/images/clinician-desk.webp"
-              alt="A clinician reading from a tablet at a desk before a session"
-              ratio="16 / 10"
-              note="Over-the-shoulder, clinician at laptop, screen not legible"
+              alt="A clinician working at a laptop in a warm, quiet room"
+              ratio="4 / 5"
               className="mb-7"
             />
             <p className="text-[12.5px] font-semibold uppercase tracking-[0.14em] text-accent">
@@ -243,6 +241,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className="mx-auto max-w-[1100px] px-5 pt-16 sm:px-8">
+        <Figure
+          src="/images/texture-fold.webp"
+          alt=""
+          ratio="2400 / 965"
+          className="!rounded-none"
+        />
+      </div>
 
       {/* Why restraint */}
       <section className="mx-auto max-w-[1100px] px-5 py-20 sm:px-8">

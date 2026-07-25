@@ -20,7 +20,7 @@ export default function ForCliniciansPage() {
   return (
     <div>
       <section className="mx-auto max-w-[1100px] px-5 pb-14 pt-14 sm:px-8 sm:pt-20">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+        <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-16">
           <div>
             <p className="text-[12.5px] font-semibold uppercase tracking-[0.16em] text-accent">
               For clinicians
@@ -29,24 +29,22 @@ export default function ForCliniciansPage() {
               You did not leave insurance over the rates. You left over
               everything attached to the rates.
             </h1>
-            <p className="mt-7 text-lg leading-relaxed text-ink-soft">
-              The delta between a network rate and your cash rate is real, but
-              it is rarely the thing that decides it. What decides it is the
-              unbilled half-hour per patient: verification, forms, follow-up,
-              documentation rebuilt from scratch. Covera is built to take that
-              half-hour back.
-            </p>
           </div>
-
-          <Figure
-            src="/images/clinician-office.webp"
-            alt="A psychiatrist reading from a tablet in a quiet home office"
-            ratio="4 / 5"
-            priority
-            note="Psychiatrist 40s in quiet home office, reading tablet, soft daylight"
-            className="shadow-soft"
-          />
+          <p className="text-[17px] leading-relaxed text-ink-soft">
+            The delta between a network rate and your cash rate is real, but it
+            is rarely the thing that decides it. What decides it is the unbilled
+            half-hour per patient: verification, forms, follow-up, documentation
+            rebuilt from scratch. Covera is built to take that half-hour back.
+          </p>
         </div>
+
+        <Figure
+          src="/images/clinician-office.webp"
+          alt="A psychiatrist reading from a tablet in a quiet office"
+          ratio="4 / 3"
+          priority
+          className="mt-12 shadow-soft"
+        />
       </section>
 
       <section className="border-y border-line bg-bg-warm">
