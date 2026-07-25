@@ -45,7 +45,7 @@ export default function MatchPage() {
   if (!intake.coverage || !intake.screener) {
     return (
       <div className="mx-auto max-w-2xl px-5 py-20">
-        <h1 className="text-2xl font-semibold tracking-tight">
+        <h1 className="font-display text-2xl font-semibold">
           We need a couple of things first
         </h1>
         <p className="mt-3 text-[17px] leading-relaxed text-ink-soft">
@@ -54,7 +54,7 @@ export default function MatchPage() {
         </p>
         <Link
           href="/coverage"
-          className="mt-7 inline-flex rounded-full bg-brand px-7 py-3.5 text-base font-medium text-white transition-colors hover:bg-brand-hover"
+          className="mt-7 inline-flex rounded-card bg-brand px-7 py-3.5 text-base font-medium text-white transition-colors hover:bg-brand-hover"
         >
           Start the coverage check
         </Link>
@@ -69,7 +69,7 @@ export default function MatchPage() {
   if (!result || result.matches.length === 0) {
     return (
       <div className="mx-auto max-w-2xl px-5 py-20">
-        <h1 className="text-2xl font-semibold tracking-tight">
+        <h1 className="font-display text-2xl font-semibold">
           No in-network match in {stateName}
         </h1>
         <p className="mt-3 text-[17px] leading-relaxed text-ink-soft">
@@ -79,7 +79,7 @@ export default function MatchPage() {
         </p>
         <Link
           href="/coverage"
-          className="mt-7 inline-flex rounded-full border border-line bg-surface px-7 py-3.5 text-base font-medium transition-colors hover:bg-brand-soft"
+          className="mt-7 inline-flex rounded-card border border-line bg-surface px-7 py-3.5 text-base font-medium transition-colors hover:bg-brand-soft"
         >
           Try a different plan
         </Link>
@@ -106,7 +106,7 @@ export default function MatchPage() {
       <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-brand">
         Step 3 of 3
       </p>
-      <h1 className="mt-3 text-3xl font-semibold tracking-tight">
+      <h1 className="font-display mt-3 text-3xl font-semibold">
         Three psychiatrists who actually fit
       </h1>
       <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
@@ -114,7 +114,7 @@ export default function MatchPage() {
         true, and you can check every one of them.
       </p>
 
-      <div className="mt-7 rounded-2xl border border-line bg-surface p-6">
+      <div className="mt-7 rounded-card border border-line bg-surface p-6">
         <h2 className="text-base font-semibold">How we got to three</h2>
         <ol className="mt-4 space-y-3">
           {[
@@ -154,7 +154,7 @@ export default function MatchPage() {
           ))}
         </ol>
         {result.relaxedCondition && (
-          <p className="mt-4 rounded-xl border border-accent/30 bg-accent-soft px-4 py-3 text-[14px] leading-relaxed text-ink">
+          <p className="mt-4 rounded-card border border-accent/30 bg-accent-soft px-4 py-3 text-[14px] leading-relaxed text-ink">
             Fewer than three clinicians treat{" "}
             {screener.presentingCondition.toLowerCase()} in your network, so
             we&apos;ve included the closest adjacent fits and labelled them
@@ -167,11 +167,11 @@ export default function MatchPage() {
         {result.matches.map(({ clinician, reasons, nextSlot }) => (
           <article
             key={clinician.id}
-            className="rounded-2xl border border-line bg-surface p-6 sm:p-7"
+            className="rounded-card border border-line bg-surface p-6 sm:p-7"
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
-                <h3 className="text-xl font-semibold tracking-tight">
+                <h3 className="font-display text-xl font-semibold">
                   Dr. {clinician.name}, {clinician.credential}
                 </h3>
                 <p className="mt-1 text-[14px] text-ink-soft">
@@ -217,7 +217,7 @@ export default function MatchPage() {
                   nextSlot,
                 )
               }
-              className="mt-6 w-full rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-brand-hover"
+              className="mt-6 w-full rounded-card bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-brand-hover"
             >
               Book {nextSlot}
             </button>

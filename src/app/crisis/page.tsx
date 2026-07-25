@@ -34,7 +34,7 @@ const resources = [
 export default function CrisisPage() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-14">
-      <h1 className="text-3xl font-semibold tracking-tight">
+      <h1 className="font-display text-3xl font-semibold">
         Talk to someone now
       </h1>
       <p className="mt-4 text-lg leading-relaxed text-ink-soft">
@@ -47,7 +47,7 @@ export default function CrisisPage() {
         {resources.map((r) => (
           <div
             key={r.name}
-            className="rounded-2xl border border-line bg-surface p-6"
+            className="rounded-card border border-line bg-surface p-6"
           >
             <h2 className="text-lg font-semibold">{r.name}</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
@@ -55,7 +55,7 @@ export default function CrisisPage() {
             </p>
             <a
               href={r.href}
-              className="mt-4 inline-flex rounded-full bg-danger px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="mt-4 inline-flex rounded-card bg-danger px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
               {r.action}
             </a>

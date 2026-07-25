@@ -28,7 +28,7 @@ export default function ConfirmationPage() {
   if (!booking || !coverage) {
     return (
       <div className="mx-auto max-w-2xl px-5 py-20">
-        <h1 className="text-2xl font-semibold tracking-tight">
+        <h1 className="font-display text-2xl font-semibold">
           Nothing booked yet
         </h1>
         <p className="mt-3 text-[17px] leading-relaxed text-ink-soft">
@@ -37,7 +37,7 @@ export default function ConfirmationPage() {
         </p>
         <Link
           href="/coverage"
-          className="mt-7 inline-flex rounded-full bg-brand px-7 py-3.5 text-base font-medium text-white transition-colors hover:bg-brand-hover"
+          className="mt-7 inline-flex rounded-card bg-brand px-7 py-3.5 text-base font-medium text-white transition-colors hover:bg-brand-hover"
         >
           Start the coverage check
         </Link>
@@ -50,7 +50,7 @@ export default function ConfirmationPage() {
 
   return (
     <div className="mx-auto max-w-2xl px-5 py-14">
-      <div className="rounded-3xl border border-ok/25 bg-ok-soft p-7 sm:p-9">
+      <div className="rounded-card border border-ok/25 bg-ok-soft p-7 sm:p-9">
         <div className="flex items-center gap-2.5">
           <span
             aria-hidden
@@ -62,7 +62,7 @@ export default function ConfirmationPage() {
             Appointment held
           </span>
         </div>
-        <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight">
+        <h1 className="font-display mt-4 text-3xl font-semibold leading-tight">
           {booking.slot} with Dr. {booking.clinicianName},{" "}
           {booking.credential}.
         </h1>
@@ -91,7 +91,7 @@ export default function ConfirmationPage() {
         ].map((row) => (
           <div
             key={row.label}
-            className="rounded-2xl border border-line bg-surface p-5"
+            className="rounded-card border border-line bg-surface p-5"
           >
             <p className="text-[13px] text-ink-soft">{row.label}</p>
             <p className="mt-1 text-[16px] font-semibold">{row.value}</p>
@@ -99,7 +99,7 @@ export default function ConfirmationPage() {
         ))}
       </div>
 
-      <div className="mt-6 rounded-2xl border border-line bg-surface p-6">
+      <div className="mt-6 rounded-card border border-line bg-surface p-6">
         <h2 className="text-base font-semibold">What happens next</h2>
         <ol className="mt-4 space-y-4">
           {[
@@ -133,7 +133,7 @@ export default function ConfirmationPage() {
 
       <Link
         href="/clinician"
-        className="mt-6 flex items-center justify-between gap-4 rounded-2xl border border-brand/25 bg-brand-soft px-6 py-5 transition-colors hover:bg-brand/10"
+        className="mt-6 flex items-center justify-between gap-4 rounded-card border border-brand/25 bg-brand-soft px-6 py-5 transition-colors hover:bg-brand/10"
       >
         <span>
           <span className="block text-[15px] font-semibold">

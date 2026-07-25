@@ -12,11 +12,11 @@ export function CrisisInterrupt({
 }) {
   return (
     <div className="mx-auto max-w-2xl px-5 py-14" data-testid="crisis-interrupt">
-      <div className="rounded-3xl border-2 border-danger/30 bg-danger-soft p-7 sm:p-9">
+      <div className="rounded-card border-2 border-danger/30 bg-danger-soft p-7 sm:p-9">
         <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-danger">
           Intake stopped
         </p>
-        <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight">
+        <h1 className="font-display mt-3 text-3xl font-semibold leading-tight">
           Let&apos;s get you to a person, not a form.
         </h1>
         <p className="mt-4 text-[17px] leading-relaxed text-ink">
@@ -28,7 +28,7 @@ export function CrisisInterrupt({
         <div className="mt-7 space-y-3">
           <a
             href="tel:988"
-            className="flex items-center justify-between gap-4 rounded-2xl bg-danger px-6 py-5 text-white transition-opacity hover:opacity-90"
+            className="flex items-center justify-between gap-4 rounded-card bg-danger px-6 py-5 text-white transition-opacity hover:opacity-90"
           >
             <span>
               <span className="block text-lg font-semibold">
@@ -44,7 +44,7 @@ export function CrisisInterrupt({
           </a>
           <a
             href="sms:741741?&body=HOME"
-            className="flex items-center justify-between gap-4 rounded-2xl border border-danger/25 bg-surface px-6 py-5 transition-colors hover:bg-danger-soft"
+            className="flex items-center justify-between gap-4 rounded-card border border-danger/25 bg-surface px-6 py-5 transition-colors hover:bg-danger-soft"
           >
             <span>
               <span className="block text-lg font-semibold">
@@ -60,7 +60,7 @@ export function CrisisInterrupt({
           </a>
           <a
             href="tel:911"
-            className="flex items-center justify-between gap-4 rounded-2xl border border-danger/25 bg-surface px-6 py-5 transition-colors hover:bg-danger-soft"
+            className="flex items-center justify-between gap-4 rounded-card border border-danger/25 bg-surface px-6 py-5 transition-colors hover:bg-danger-soft"
           >
             <span>
               <span className="block text-lg font-semibold">Call 911</span>
@@ -81,7 +81,7 @@ export function CrisisInterrupt({
         </p>
       </div>
 
-      <div className="mt-7 rounded-2xl border border-line bg-surface p-6">
+      <div className="mt-7 rounded-card border border-line bg-surface p-6">
         <h2 className="text-base font-semibold">
           Once you&apos;ve talked to someone
         </h2>

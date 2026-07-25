@@ -59,7 +59,7 @@ function QuestionGrid({
                   aria-checked={selected}
                   name={`${namePrefix}-${i}`}
                   onClick={() => onChange(i, opt.value)}
-                  className={`rounded-xl border px-3 py-2.5 text-left text-[13px] leading-tight transition-colors ${
+                  className={`rounded-card border px-3 py-2.5 text-left text-[13px] leading-tight transition-colors ${
                     selected
                       ? "border-brand bg-brand text-white"
                       : "border-line bg-surface hover:border-brand/40 hover:bg-brand-soft"
@@ -71,7 +71,7 @@ function QuestionGrid({
             })}
           </div>
           {riskIndex === i && (answers[i] ?? 0) > 0 && (
-            <div className="ml-9 mt-3 rounded-xl border border-danger/25 bg-danger-soft px-4 py-3 text-[14px] leading-relaxed text-ink">
+            <div className="ml-9 mt-3 rounded-card border border-danger/25 bg-danger-soft px-4 py-3 text-[14px] leading-relaxed text-ink">
               <span className="font-semibold text-danger">
                 We hear you, and we&apos;re taking this seriously.
               </span>{" "}
@@ -158,7 +158,7 @@ export default function ScreenerPage() {
         <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-brand">
           Step 2 of 3 · Complete
         </p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight">
+        <h1 className="font-display mt-3 text-3xl font-semibold">
           Your screening results
         </h1>
         <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
@@ -184,7 +184,7 @@ export default function ScreenerPage() {
           />
         </div>
 
-        <div className="mt-4 rounded-2xl border border-line bg-surface p-6">
+        <div className="mt-4 rounded-card border border-line bg-surface p-6">
           <h2 className="text-base font-semibold">What we&apos;ll match on</h2>
           <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
             Presenting concern:{" "}
@@ -197,7 +197,7 @@ export default function ScreenerPage() {
         <button
           type="button"
           onClick={() => router.push("/match")}
-          className="mt-8 w-full rounded-full bg-brand px-7 py-4 text-base font-medium text-white transition-colors hover:bg-brand-hover"
+          className="mt-8 w-full rounded-card bg-brand px-7 py-4 text-base font-medium text-white transition-colors hover:bg-brand-hover"
         >
           See psychiatrists who match
         </button>
@@ -214,7 +214,7 @@ export default function ScreenerPage() {
       <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-brand">
         Step 2 of 3
       </p>
-      <h1 className="mt-3 text-3xl font-semibold tracking-tight">
+      <h1 className="font-display mt-3 text-3xl font-semibold">
         Two standard questionnaires
       </h1>
       <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
@@ -223,7 +223,7 @@ export default function ScreenerPage() {
         answers, and nothing here is a diagnosis.
       </p>
 
-      <section className="mt-9 rounded-2xl border border-line bg-surface p-6 sm:p-7">
+      <section className="mt-9 rounded-card border border-line bg-surface p-6 sm:p-7">
         <h2 className="text-lg font-semibold">PHQ-9</h2>
         <p className="mt-1.5 text-[15px] leading-relaxed text-ink-soft">
           {PHQ9_PROMPT}
@@ -241,7 +241,7 @@ export default function ScreenerPage() {
         </div>
       </section>
 
-      <section className="mt-6 rounded-2xl border border-line bg-surface p-6 sm:p-7">
+      <section className="mt-6 rounded-card border border-line bg-surface p-6 sm:p-7">
         <h2 className="text-lg font-semibold">GAD-7</h2>
         <p className="mt-1.5 text-[15px] leading-relaxed text-ink-soft">
           {GAD7_PROMPT}
@@ -259,7 +259,7 @@ export default function ScreenerPage() {
       </section>
 
       {showIncomplete && !complete && (
-        <p className="mt-5 rounded-xl border border-accent/30 bg-accent-soft px-4 py-3 text-[14px] text-ink">
+        <p className="mt-5 rounded-card border border-accent/30 bg-accent-soft px-4 py-3 text-[14px] text-ink">
           Please answer all {totalCount} questions — {totalCount - answeredCount}{" "}
           left.
         </p>
@@ -277,7 +277,7 @@ export default function ScreenerPage() {
             type="button"
             onClick={handleSubmit}
             aria-disabled={!complete}
-            className={`w-full rounded-full px-7 py-4 text-base font-medium transition-colors ${
+            className={`w-full rounded-card px-7 py-4 text-base font-medium transition-colors ${
               complete
                 ? "bg-brand text-white hover:bg-brand-hover"
                 : "bg-line text-ink-faint"

@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Covera — psychiatry that takes your insurance",
+  title: "Covera — the intake layer for in-network psychiatry",
   description:
-    "Find a psychiatrist who takes your insurance — in 90 seconds. Hackathon prototype.",
+    "Psychiatry is the least in-network specialty in American medicine. Covera verifies coverage before signup and delivers a finished intake to the clinician. Hackathon prototype.",
 };
 
 export default function RootLayout({
@@ -28,9 +29,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className="font-sans min-h-full flex flex-col bg-bg text-ink">
+      <body className="flex min-h-full flex-col bg-bg font-sans text-ink">
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

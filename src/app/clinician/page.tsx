@@ -36,7 +36,7 @@ export default function ClinicianPage() {
   if (!coverage || !screener) {
     return (
       <div className="mx-auto max-w-2xl px-5 py-20">
-        <h1 className="text-2xl font-semibold tracking-tight">
+        <h1 className="font-display text-2xl font-semibold">
           No intake to display
         </h1>
         <p className="mt-3 text-[17px] leading-relaxed text-ink-soft">
@@ -45,7 +45,7 @@ export default function ClinicianPage() {
         </p>
         <Link
           href="/coverage"
-          className="mt-7 inline-flex rounded-full bg-brand px-7 py-3.5 text-base font-medium text-white transition-colors hover:bg-brand-hover"
+          className="mt-7 inline-flex rounded-card bg-brand px-7 py-3.5 text-base font-medium text-white transition-colors hover:bg-brand-hover"
         >
           Start the coverage check
         </Link>
@@ -74,7 +74,7 @@ export default function ClinicianPage() {
           Read-only · static demo
         </span>
       </div>
-      <h1 className="mt-3 text-3xl font-semibold tracking-tight">
+      <h1 className="font-display mt-3 text-3xl font-semibold">
         Pre-visit note — already written
       </h1>
       <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
@@ -83,7 +83,7 @@ export default function ClinicianPage() {
         who is walking in.
       </p>
 
-      <div className="mt-8 overflow-hidden rounded-2xl border border-line bg-surface">
+      <div className="mt-8 overflow-hidden rounded-card border border-line bg-surface">
         <div className="border-b border-line bg-bg px-6 py-4">
           <p className="font-mono text-[12px] uppercase tracking-wider text-ink-soft">
             Intake summary · generated automatically
@@ -128,7 +128,7 @@ export default function ClinicianPage() {
               Screening
             </h2>
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-line p-4">
+              <div className="rounded-card border border-line p-4">
                 <p className="text-[13px] text-ink-soft">PHQ-9</p>
                 <p className="mt-0.5 text-xl font-semibold tabular-nums">
                   {screener.phq9Score}/27 ·{" "}
@@ -137,7 +137,7 @@ export default function ClinicianPage() {
                   </span>
                 </p>
               </div>
-              <div className="rounded-xl border border-line p-4">
+              <div className="rounded-card border border-line p-4">
                 <p className="text-[13px] text-ink-soft">GAD-7</p>
                 <p className="mt-0.5 text-xl font-semibold tabular-nums">
                   {screener.gad7Score}/21 ·{" "}
@@ -192,7 +192,7 @@ export default function ClinicianPage() {
                 ? ` Scheduled with Dr. ${booking.clinicianName}, ${booking.credential} for ${booking.slot}.`
                 : ""}
             </p>
-            <p className="mt-3 rounded-xl border border-line bg-bg px-4 py-3 text-[14px] leading-relaxed text-ink-soft">
+            <p className="mt-3 rounded-card border border-line bg-bg px-4 py-3 text-[14px] leading-relaxed text-ink-soft">
               <span className="font-semibold text-ink">Scope note:</span> Covera
               performs screening and clinician matching only. No medication is
               recommended, prescribed, or refilled anywhere in this product —
@@ -205,13 +205,13 @@ export default function ClinicianPage() {
       <div className="mt-7 flex flex-wrap gap-3">
         <Link
           href="/confirmation"
-          className="rounded-full border border-line bg-surface px-6 py-3 text-[15px] font-medium transition-colors hover:bg-brand-soft"
+          className="rounded-card border border-line bg-surface px-6 py-3 text-[15px] font-medium transition-colors hover:bg-brand-soft"
         >
           Back to patient view
         </Link>
         <Link
           href="/"
-          className="rounded-full border border-line bg-surface px-6 py-3 text-[15px] font-medium transition-colors hover:bg-brand-soft"
+          className="rounded-card border border-line bg-surface px-6 py-3 text-[15px] font-medium transition-colors hover:bg-brand-soft"
         >
           Start over
         </Link>

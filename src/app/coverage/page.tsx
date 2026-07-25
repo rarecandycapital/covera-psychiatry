@@ -24,7 +24,7 @@ function toDateInput(yyyymmdd: string) {
 
 const labelClass = "block text-[13px] font-medium text-ink-soft";
 const fieldClass =
-  "mt-1.5 w-full rounded-xl border border-line bg-surface px-4 py-3 text-[15px] text-ink outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-brand/15";
+  "mt-1.5 w-full rounded-card border border-line bg-surface px-4 py-3 text-[15px] text-ink outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-brand/15";
 
 export default function CoveragePage() {
   const router = useRouter();
@@ -107,7 +107,7 @@ export default function CoveragePage() {
         </p>
 
         <div
-          className={`mt-4 rounded-3xl border p-7 ${
+          className={`mt-4 rounded-card border p-7 ${
             result.active
               ? "border-ok/25 bg-ok-soft"
               : "border-accent/30 bg-accent-soft"
@@ -131,7 +131,7 @@ export default function CoveragePage() {
             </span>
           </div>
 
-          <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight">
+          <h1 className="font-display mt-4 text-3xl font-semibold leading-tight">
             {result.active ? (
               result.copay !== null ? (
                 <>
@@ -164,19 +164,19 @@ export default function CoveragePage() {
         </div>
 
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
-          <div className="rounded-2xl border border-line bg-surface p-5">
+          <div className="rounded-card border border-line bg-surface p-5">
             <p className="text-[13px] text-ink-soft">Copay per visit</p>
             <p className="mt-1 text-2xl font-semibold tabular-nums">
               {result.copay !== null ? `$${result.copay}` : "—"}
             </p>
           </div>
-          <div className="rounded-2xl border border-line bg-surface p-5">
+          <div className="rounded-card border border-line bg-surface p-5">
             <p className="text-[13px] text-ink-soft">Coinsurance</p>
             <p className="mt-1 text-2xl font-semibold tabular-nums">
               {result.coinsurance !== null ? `${result.coinsurance}%` : "—"}
             </p>
           </div>
-          <div className="rounded-2xl border border-line bg-surface p-5">
+          <div className="rounded-card border border-line bg-surface p-5">
             <p className="text-[13px] text-ink-soft">Deductible left</p>
             <p className="mt-1 text-2xl font-semibold tabular-nums">
               {result.deductibleRemaining !== null
@@ -186,11 +186,11 @@ export default function CoveragePage() {
           </div>
         </div>
 
-        <div className="mt-4 rounded-2xl border border-line bg-surface p-6">
+        <div className="mt-4 rounded-card border border-line bg-surface p-6">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h2 className="text-base font-semibold">How we read your benefits</h2>
             <span
-              className={`rounded-full px-2.5 py-1 text-[12px] font-semibold ${
+              className={`rounded-card px-2.5 py-1 text-[12px] font-semibold ${
                 result.source === "live"
                   ? "bg-brand-soft text-brand"
                   : "bg-accent-soft text-accent"
@@ -220,7 +220,7 @@ export default function CoveragePage() {
           <button
             type="button"
             onClick={() => router.push("/screener")}
-            className="mt-8 w-full rounded-full bg-brand px-7 py-4 text-base font-medium text-white transition-colors hover:bg-brand-hover"
+            className="mt-8 w-full rounded-card bg-brand px-7 py-4 text-base font-medium text-white transition-colors hover:bg-brand-hover"
           >
             Continue to screening
           </button>
@@ -228,7 +228,7 @@ export default function CoveragePage() {
           <button
             type="button"
             onClick={() => setResult(null)}
-            className="mt-8 w-full rounded-full border border-line bg-surface px-7 py-4 text-base font-medium transition-colors hover:bg-brand-soft"
+            className="mt-8 w-full rounded-card border border-line bg-surface px-7 py-4 text-base font-medium transition-colors hover:bg-brand-soft"
           >
             Check a different plan
           </button>
@@ -247,7 +247,7 @@ export default function CoveragePage() {
       <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-brand">
         Step 1 of 3
       </p>
-      <h1 className="mt-3 text-3xl font-semibold tracking-tight">
+      <h1 className="font-display mt-3 text-3xl font-semibold">
         Let&apos;s check your insurance first
       </h1>
       <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
@@ -258,7 +258,7 @@ export default function CoveragePage() {
 
       <form
         onSubmit={handleSubmit}
-        className="mt-9 rounded-2xl border border-line bg-surface p-6 sm:p-7"
+        className="mt-9 rounded-card border border-line bg-surface p-6 sm:p-7"
       >
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="sm:col-span-2">
@@ -362,7 +362,7 @@ export default function CoveragePage() {
         </div>
 
         {error && (
-          <p className="mt-5 rounded-xl border border-accent/30 bg-accent-soft px-4 py-3 text-[14px] text-ink">
+          <p className="mt-5 rounded-card border border-accent/30 bg-accent-soft px-4 py-3 text-[14px] text-ink">
             {error}
           </p>
         )}
@@ -370,7 +370,7 @@ export default function CoveragePage() {
         <button
           type="submit"
           aria-disabled={!canSubmit}
-          className={`mt-7 w-full rounded-full px-7 py-4 text-base font-medium transition-colors ${
+          className={`mt-7 w-full rounded-card px-7 py-4 text-base font-medium transition-colors ${
             canSubmit
               ? "bg-brand text-white hover:bg-brand-hover"
               : "bg-line text-ink-faint"

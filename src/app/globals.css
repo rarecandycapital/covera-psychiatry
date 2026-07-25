@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  /* Warm-medical palette: clinical credibility, but not a hospital portal. */
-  --bg: #faf8f5;
+  /* Warm, premium-DTC health palette. No purple, no bright blue. */
+  --bg: #faf7f2;
+  --bg-warm: #f4efe6;
   --surface: #ffffff;
-  --ink: #1b2b33;
-  --ink-soft: #5a6b73;
-  --ink-faint: #8a969c;
-  --brand: #0f6b60;
-  --brand-hover: #0b544b;
-  --brand-soft: #e6f1ef;
-  --accent: #c07a45;
-  --accent-soft: #fbf1e8;
-  --border: #e6e0d6;
-  --danger: #a63232;
-  --danger-soft: #fbeceb;
-  --ok: #2f7a55;
-  --ok-soft: #eaf4ee;
+
+  --ink: #2c2c29;
+  --ink-soft: #5f625c;
+  --ink-faint: #8e918a;
+
+  --brand: #1f4d3a;
+  --brand-hover: #16382a;
+  --brand-soft: #e9f0ea;
+
+  --sage: #7e9a80;
+  --sage-soft: #eaf0e9;
+
+  --accent: #a9762f;
+  --accent-soft: #f7eee1;
+
+  --danger: #9c3328;
+  --danger-soft: #f8ebe8;
+
+  --ok: #2e7355;
+  --ok-soft: #e8f1ec;
+
+  --border: #e7e1d7;
+
+  /* One radius everywhere. */
+  --radius: 16px;
+  --shadow-soft: 0 1px 2px rgba(44, 44, 41, 0.04),
+    0 8px 24px -12px rgba(44, 44, 41, 0.12);
 }
 
 @theme inline {
   --color-bg: var(--bg);
+  --color-bg-warm: var(--bg-warm);
   --color-surface: var(--surface);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
@@ -28,6 +44,8 @@
   --color-brand: var(--brand);
   --color-brand-hover: var(--brand-hover);
   --color-brand-soft: var(--brand-soft);
+  --color-sage: var(--sage);
+  --color-sage-soft: var(--sage-soft);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-line: var(--border);
@@ -35,8 +53,11 @@
   --color-danger-soft: var(--danger-soft);
   --color-ok: var(--ok);
   --color-ok-soft: var(--ok-soft);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
+
+  --radius-card: var(--radius);
 }
 
 html {
@@ -46,4 +67,16 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Headlines are serif everywhere, body stays Inter. */
+.font-display {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
 }

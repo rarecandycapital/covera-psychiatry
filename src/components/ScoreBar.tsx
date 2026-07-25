@@ -21,11 +21,11 @@ export function ScoreBar({
 }) {
   const t = toneClasses[tone];
   return (
-    <div className="rounded-2xl border border-line bg-surface p-6">
+    <div className="rounded-card border border-line bg-surface p-6">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h3 className="text-base font-semibold">{label}</h3>
         <span
-          className={`rounded-full px-3 py-1 text-[13px] font-semibold ${t.chip}`}
+          className={`rounded-card px-3 py-1 text-[13px] font-semibold ${t.chip}`}
         >
           {severity}
         </span>
