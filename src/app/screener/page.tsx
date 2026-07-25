@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { CrisisInterrupt } from "@/components/CrisisInterrupt";
+import { FunnelHeader } from "@/components/FunnelHeader";
 import { ScoreBar } from "@/components/ScoreBar";
 import { writeIntake } from "@/lib/intake";
 import {
@@ -122,6 +123,15 @@ export default function ScreenerPage() {
     };
   }, [complete, phq9, gad7]);
 
+  // Demo affordance: fills a plausible moderate profile so the flow can be walked
+  // quickly. Item 9 stays at zero — the crisis path is demonstrated by changing that
+  // one answer by hand, which is the point of the demo.
+  function fillSample() {
+    setPhq9([2, 3, 2, 3, 2, 2, 2, 1, 0]);
+    setGad7([2, 2, 3, 2, 1, 2, 2]);
+    setShowIncomplete(false);
+  }
+
   function handleSubmit() {
     if (!complete || !results) {
       setShowIncomplete(true);
@@ -209,20 +219,28 @@ export default function ScreenerPage() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-5 py-14 pb-32">
-      <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-brand">
-        Step 2 of 3
-      </p>
-      <h1 className="font-display mt-3 text-3xl font-semibold">
-        Two standard questionnaires
-      </h1>
-      <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
-        The PHQ-9 and GAD-7 are the same validated screeners a psychiatrist would
-        hand you in the waiting room. Answer honestly — there are no wrong
-        answers, and nothing here is a diagnosis.
-      </p>
+    <div className="pb-32">
+      <FunnelHeader
+        step={2}
+        title="Two standard questionnaires"
+        lede="The PHQ-9 and GAD-7 are the same validated screeners a psychiatrist would hand you in the waiting room. Answer honestly — there are no wrong answers, and nothing here is a diagnosis."
+        aside={
+          <div className="sm:text-right">
+            <button
+              type="button"
+              onClick={fillSample}
+              className="rounded-card border border-dashed border-ink/25 px-4 py-2.5 text-[13.5px] font-medium text-ink-soft transition-colors hover:border-brand hover:bg-brand-soft hover:text-brand"
+            >
+              Sample answers
+            </button>
+            <p className="label-mono mt-2 text-ink-faint">Demo shortcut</p>
+          </div>
+        }
+      />
 
-      <section className="mt-9 rounded-card border border-line bg-surface p-6 sm:p-7">
+      <div className="mx-auto max-w-3xl px-5 pt-10">
+
+      <section className="rounded-card border border-line bg-surface p-6 sm:p-7">
         <h2 className="text-lg font-semibold">PHQ-9</h2>
         <p className="mt-1.5 text-[15px] leading-relaxed text-ink-soft">
           {PHQ9_PROMPT}
@@ -298,6 +316,7 @@ export default function ScreenerPage() {
           Get help immediately
         </Link>
       </p>
+      </div>
     </div>
   );
 }

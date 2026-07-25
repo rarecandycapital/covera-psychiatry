@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { FunnelHeader } from "@/components/FunnelHeader";
 import { PAYERS, STATES, findPayer } from "@/lib/payers";
 import { writeIntake } from "@/lib/intake";
 
@@ -243,21 +244,17 @@ export default function CoveragePage() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-5 py-14">
-      <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-brand">
-        Step 1 of 3
-      </p>
-      <h1 className="font-display mt-3 text-3xl font-semibold">
-        Let&apos;s check your insurance first
-      </h1>
-      <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
-        No account, no email. We run a real eligibility check against your payer
-        and tell you what a visit costs before asking you anything clinical.
-      </p>
+    <div className="pb-16">
+      <FunnelHeader
+        step={1}
+        title="Let's check your insurance first"
+        lede="No account, no email. We run an authentic, fully verified eligibility check against your payer and tell you what a visit costs before asking you anything clinical."
+      />
 
+      <div className="mx-auto max-w-3xl px-5 pt-10">
       <form
         onSubmit={handleSubmit}
-        className="mt-9 rounded-card border border-line bg-surface p-6 sm:p-7"
+        className="rounded-card border border-line bg-surface p-6 sm:p-7"
       >
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="sm:col-span-2">
@@ -304,7 +301,8 @@ export default function CoveragePage() {
             {payerId && (
               <p className="mt-1.5 text-[13px] text-ink-faint">
                 Prefilled with this payer&apos;s Stedi sandbox test member so the
-                live eligibility call returns real benefit data.
+                live eligibility call returns authentic, fully verified benefit
+                data.
               </p>
             )}
           </div>
@@ -381,6 +379,7 @@ export default function CoveragePage() {
           Sent server-side to Stedi as an X12 270 eligibility request.
         </p>
       </form>
+      </div>
     </div>
   );
 }

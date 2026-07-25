@@ -20,7 +20,7 @@ const metrics = [
   {
     value: 90,
     suffix: "s",
-    label: "to a real number",
+    label: "to a fully verified number",
     note: "Landing on the site to knowing your copay. No account, no email, no card.",
   },
   {
@@ -52,7 +52,10 @@ export default function Home() {
   return (
     <div>
       {/* Hero — full-bleed photograph, copy sits over the left of the frame */}
-      <section className="relative isolate flex min-h-[78vh] items-center overflow-hidden sm:min-h-[86vh]">
+      <section
+        className="relative isolate flex min-h-[78vh] items-center overflow-hidden sm:min-h-[86vh]"
+        style={{ paddingTop: "80px" }}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/hero-patient.webp"
@@ -82,7 +85,7 @@ export default function Home() {
               </p>
               <p className="mt-4 max-w-[48ch] text-[17px] leading-relaxed text-white/75">
                 Covera puts that work at the front of the process and turns it
-                into one record that flows downstream — to the eligibility
+                into one record that flows downstream: to the eligibility
                 check, the screeners, and the clinician&apos;s note.
               </p>
 
@@ -121,7 +124,7 @@ export default function Home() {
             </h2>
           </div>
           <p className="mt-8 flex items-center gap-3 text-[15px] text-white/75">
-            Real eligibility check, no account
+            Authentic, fully verified eligibility check
             <span aria-hidden className="nudge text-xl">
               →
             </span>

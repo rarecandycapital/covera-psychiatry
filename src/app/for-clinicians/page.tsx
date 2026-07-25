@@ -145,7 +145,8 @@ export default function ForCliniciansPage() {
           <div className="col-span-12 lg:col-span-5">
             <p className="text-[16px] leading-relaxed text-ink-soft">
               Covera was built at a hackathon. The eligibility integration is
-              real and runs against a live clearinghouse sandbox. The twelve
+              authentic and fully verified, running against a live
+              clearinghouse sandbox. The twelve
               psychiatrists in the network are invented, no appointment is
               actually scheduled, and no clinician has been contacted. Walking
               the patient flow will show you which parts are working software.
