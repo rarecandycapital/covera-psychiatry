@@ -110,8 +110,8 @@ export default function MatchPage() {
         Three psychiatrists who actually fit
       </h1>
       <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
-        Not a relevance score. Each card shows the four things that had to be
-        true, and you can check every one of them.
+        These aren&apos;t ranked by a relevance score. Each card lists the four
+        conditions it had to meet, so you can check them yourself.
       </p>
 
       <div className="mt-7 rounded-card border border-line bg-surface p-6">

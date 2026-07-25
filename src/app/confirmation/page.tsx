@@ -113,7 +113,7 @@ export default function ConfirmationPage() {
             },
             {
               t: "The first visit is 50 minutes",
-              d: "Long enough to actually talk. Follow-up cadence is decided with your clinician, not by us.",
+              d: "You and your clinician decide how often to meet after that.",
             },
           ].map((step, i) => (
             <li key={step.t} className="flex gap-3.5">

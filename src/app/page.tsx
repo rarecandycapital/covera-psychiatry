@@ -10,7 +10,7 @@ const metrics = [
   {
     figure: "~170M",
     label: "covered lives in reach",
-    note: "Combined enrollment across those payers. That is the population whose benefits we can actually verify.",
+    note: "Combined enrollment across those payers — the population whose benefits we can verify.",
   },
   {
     figure: "90 sec",
@@ -20,7 +20,7 @@ const metrics = [
   {
     figure: "0",
     label: "prescriptions written",
-    note: "Covera has no prescribing surface at all. We think that is the whole point.",
+    note: "Covera has no prescribing feature. Screening and clinician matching only.",
   },
 ];
 
@@ -28,17 +28,17 @@ const steps = [
   {
     n: "01",
     t: "Coverage, before anything else",
-    d: "You pick your state and your plan. We fire a real X12 270 eligibility request at the payer and read the mental-health copay straight out of their response. Whatever number comes back is the number we show you.",
+    d: "You pick your state and your plan. We send an X12 270 eligibility request to the payer and read the mental-health copay out of the 271 that comes back. If the payer doesn't return a copay, we show that too.",
   },
   {
     n: "02",
     t: "Screening that gets scored",
-    d: "PHQ-9 and GAD-7. Same instruments a psychiatrist hands you on a clipboard, scored against the published severity bands. You see your own scores, which is rarer than it should be.",
+    d: "PHQ-9 and GAD-7, the same instruments a psychiatrist would hand you on a clipboard. Scored against the published severity bands, and your scores appear on the next screen rather than going straight to a chart you can't see.",
   },
   {
     n: "03",
-    t: "A shortlist you can argue with",
-    d: "Three psychiatrists, and next to each one the four checks it passed: state licence, your plan, your presenting concern, an actual open slot. If you disagree with a match you can see exactly which check you disagree with.",
+    t: "A shortlist you can check",
+    d: "Three psychiatrists, each with the four checks it passed listed underneath: state licence, your plan, your presenting concern, an open appointment. The filtering counts are shown as well, so you can follow how twelve became three.",
   },
 ];
 
@@ -53,20 +53,22 @@ export default function Home() {
               Insurance-first psychiatry
             </p>
             <h1 className="font-display mt-5 text-[2.6rem] font-semibold leading-[1.04] sm:text-[3.4rem]">
-              Most psychiatrists stopped taking insurance. The reason is boring,
-              and fixable.
+              Most psychiatrists don&apos;t take insurance. We check yours
+              first, in about 90 seconds.
             </h1>
           </div>
           <div>
             <p className="text-[17px] leading-relaxed text-ink-soft">
               Psychiatry has the lowest insurance-acceptance rate of any medical
-              specialty. It isn&apos;t greed. Verifying benefits, chasing intake
-              forms, and rebuilding a history the patient already told somebody
-              else costs more per visit than the network rate pays back.
+              specialty. The usual explanation is reimbursement, but the bigger
+              cost is administrative — verifying benefits, chasing intake forms,
+              re-documenting a history the patient already gave someone else.
+              For a lot of practices that work costs more than the network rate
+              returns.
             </p>
             <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
-              Covera does that administrative work up front, for both sides of
-              the appointment.
+              Covera moves that work to the front of the process, for the
+              patient and for the clinician.
             </p>
           </div>
         </div>
@@ -85,7 +87,7 @@ export default function Home() {
             I&apos;m a clinician
           </Link>
           <span className="self-center text-sm text-ink-faint sm:ml-2">
-            About 90 seconds. No account, no card, no email.
+            No account, no card, no email.
           </span>
         </div>
 
@@ -96,25 +98,6 @@ export default function Home() {
           priority
           className="mt-12 shadow-soft"
         />
-
-        <div className="mt-14 flex flex-wrap gap-x-7 gap-y-2.5 border-t border-line pt-7 text-[13.5px] text-ink-soft">
-          {[
-            "Real-time payer eligibility",
-            "Validated clinical screeners",
-            "Crisis interrupt built in",
-            "No prescribing, ever",
-          ].map((t) => (
-            <span key={t} className="flex items-center gap-2">
-              <span
-                aria-hidden
-                className="grid h-4 w-4 place-items-center rounded-full bg-brand-soft text-[9px] font-bold text-brand"
-              >
-                ✓
-              </span>
-              {t}
-            </span>
-          ))}
-        </div>
       </section>
 
       {/* Metrics */}
@@ -142,8 +125,7 @@ export default function Home() {
           Both sides of the appointment
         </p>
         <h2 className="font-display mt-4 max-w-3xl text-[2rem] font-semibold leading-[1.12] sm:text-[2.6rem]">
-          Directories help you find whoever is still in network. We work on how
-          many are still in network.
+          A better directory doesn&apos;t add a single in-network psychiatrist.
         </h2>
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
           <div className="rounded-card border border-line bg-surface p-7 shadow-soft sm:p-9">
@@ -161,14 +143,13 @@ export default function Home() {
             </h3>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
               Everywhere else you make an account, answer twenty questions,
-              upload a photo of your card, and somewhere around minute eighteen
-              you learn nobody takes your plan. That ordering is not an
-              accident. The questions come first because the questions are how
-              they keep you.
+              upload a photo of your card, and find out around minute eighteen
+              that nobody takes your plan. The sequencing is a conversion
+              tactic. Sunk cost is what makes people finish the form.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              We put the eligibility check on screen one. It costs you nothing,
-              and if the answer is bad you get it in ninety seconds instead of
+              We put the eligibility check on the first screen. It costs
+              nothing, and a bad answer arrives in ninety seconds rather than
               twenty minutes.
             </p>
             <Link
@@ -193,17 +174,16 @@ export default function Home() {
               The intake arrives already done
             </h3>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              Ask a psychiatrist why they left insurance and you will hear about
-              paperwork long before you hear about rates. Every covered visit
-              carries a tail of verification, forms, and re-documentation, and
-              that tail is what makes the network rate not worth it.
+              Ask a psychiatrist why they left insurance and paperwork usually
+              comes up before rates do. Every covered visit carries
+              verification, forms and re-documentation behind it, none of which
+              is billable.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              The intake a patient finishes here lands on the clinician side as
-              a pre-visit note. Eligibility already verified, screeners already
-              scored, the items they endorsed most already pulled out. Make
-              accepting insurance cheaper and the in-network pool stops
-              shrinking.
+              The intake a patient completes here arrives on the clinician side
+              as a pre-visit note: eligibility verified, screeners scored, the
+              items they endorsed most pulled out. That covers most of the
+              unbilled work before the visit starts.
             </p>
             <Link
               href="/for-clinicians"
@@ -260,9 +240,9 @@ export default function Home() {
           Two places we deliberately refuse to convert you.
         </h2>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          Everyone who blew up in this category blew up by converting harder. We
-          wrote the opposite constraint into the software, where a policy
-          document cannot quietly get revised at 2am.
+          The companies that got into trouble in this category got there by
+          converting harder. We put the limits in the code rather than in a
+          policy document.
         </p>
 
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
@@ -274,11 +254,7 @@ export default function Home() {
               Answer above zero on the self-harm item and the intake ends there.
               No booking button renders. The matching screen refuses to load,
               including if you type the URL in directly. Crisis resources take
-              the whole page instead.
-            </p>
-            <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              Somebody in that position needs a person on the phone tonight, not
-              a calendar invite for the 14th.
+              the whole page instead, and 988 is one tap.
             </p>
             <Link
               href="/crisis"
@@ -293,16 +269,15 @@ export default function Home() {
               We do not prescribe anything
             </h3>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              There is no prescribing surface in this product. Screening and
-              matching, and that is the entire scope. The telepsychiatry
-              companies that collapsed all collapsed on prescribing volume,
-              because once scripts are the revenue line every incentive in the
-              building bends toward writing more of them.
+              Covera has no prescribing feature — screening and clinician
+              matching, nothing else. Several telepsychiatry companies built
+              their revenue on prescription volume and ended up under federal
+              investigation for it. We would rather not carry that pressure in
+              the business at all.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              What to prescribe is the psychiatrist&apos;s call, in the room,
-              after they have met you. Our job ends at getting you into that
-              room covered.
+              Medication decisions belong to the psychiatrist you are matched
+              with, after they have met you.
             </p>
           </div>
         </div>
@@ -315,8 +290,7 @@ export default function Home() {
             Find out what psychiatry actually costs you.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[16.5px] leading-relaxed text-white/75">
-            One screen, one real eligibility check, one honest number. Before
-            you hand us anything.
+            Takes about ninety seconds and never asks you to make an account.
           </p>
           <Link
             href="/coverage"

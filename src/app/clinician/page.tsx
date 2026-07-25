@@ -78,9 +78,8 @@ export default function ClinicianPage() {
         Pre-visit note — already written
       </h1>
       <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
-        There are two users in this product. The patient never fills out an
-        intake form twice, and the psychiatrist opens the chart already knowing
-        who is walking in.
+        Everything below was generated from the intake the patient just
+        completed. Nobody retyped any of it.
       </p>
 
       <div className="mt-8 overflow-hidden rounded-card border border-line bg-surface">

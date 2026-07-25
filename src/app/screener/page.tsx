@@ -162,9 +162,8 @@ export default function ScreenerPage() {
           Your screening results
         </h1>
         <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
-          These are standard scored instruments, not a diagnosis. A clinician
-          reviews them with you — we&apos;re showing them to you because you
-          answered the questions and they&apos;re yours.
+          These are scored screening instruments, not a diagnosis. A clinician
+          goes through them with you at the first visit.
         </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">

@@ -4,15 +4,15 @@ import { Figure } from "@/components/Figure";
 const burden = [
   {
     t: "Benefit verification",
-    d: "Someone in your office calls the payer or logs into six different portals. We run the 270 before the patient ever books, and the copay is on the chart when you open it.",
+    d: "Someone in the office calls the payer, or logs into whichever portal that payer uses. We run the 270 before the patient books, so the copay is already on the chart when you open it.",
   },
   {
     t: "Intake paperwork",
-    d: "Forms emailed, forms not returned, forms returned blank. The screeners are completed as part of booking, or the booking does not happen.",
+    d: "Forms emailed, forms not returned, forms returned half-finished. Here the screeners are part of booking. If they aren't completed, the appointment isn't made.",
   },
   {
     t: "Re-taking the history",
-    d: "The first fifteen minutes of a fifty minute visit, spent on questions the patient already answered. You get the scores, the bands, and the items they endorsed hardest, before they sit down.",
+    d: "Fifteen minutes of a fifty minute visit spent on questions the patient has already answered once. You get the scores, the bands and the items they endorsed hardest before they sit down.",
   },
 ];
 
@@ -26,15 +26,15 @@ export default function ForCliniciansPage() {
               For clinicians
             </p>
             <h1 className="font-display mt-5 text-[2.4rem] font-semibold leading-[1.06] sm:text-[3.1rem]">
-              You did not leave insurance over the rates. You left over
-              everything attached to the rates.
+              The rates aren&apos;t really why psychiatrists drop insurance.
             </h1>
           </div>
           <p className="text-[17px] leading-relaxed text-ink-soft">
-            The delta between a network rate and your cash rate is real, but it
-            is rarely the thing that decides it. What decides it is the unbilled
-            half-hour per patient: verification, forms, follow-up, documentation
-            rebuilt from scratch. Covera is built to take that half-hour back.
+            The gap between a network rate and a cash rate is real, but it is
+            rarely the deciding factor on its own. What decides it is the
+            unbilled half-hour per patient: verification, forms, follow-up, and
+            documentation rebuilt from scratch. Covera is built to take that
+            half-hour back.
           </p>
         </div>
 
@@ -75,15 +75,15 @@ export default function ForCliniciansPage() {
               What lands on your side
             </h2>
             <p className="mt-5 text-[16px] leading-relaxed text-ink-soft">
-              A single pre-visit note. Patient and plan at the top, eligibility
+              One pre-visit note. Patient and plan at the top, eligibility
               status with the payer&apos;s own copay and deductible figures,
               PHQ-9 and GAD-7 with severity bands, and the specific items the
-              patient scored hardest on. Then a short impression paragraph you
-              can rewrite in thirty seconds or ignore entirely.
+              patient scored hardest on. Below that, a short impression
+              paragraph you can rewrite or ignore.
             </p>
             <p className="mt-4 text-[16px] leading-relaxed text-ink-soft">
-              The safety item is called out explicitly, every time, including
-              when it is negative. You should never have to go hunting for it.
+              The safety item is called out on every note, including when it is
+              negative, so you are never scanning for it.
             </p>
             <Link
               href="/clinician"
@@ -101,15 +101,15 @@ export default function ForCliniciansPage() {
               {[
                 {
                   t: "Anyone flagged at risk",
-                  d: "A positive self-harm item ends the intake at our end. They are routed to 988 and crisis services, not onto your calendar.",
+                  d: "A positive self-harm item ends the intake at our end. They go to 988 and crisis services rather than onto your calendar.",
                 },
                 {
                   t: "Medication requests",
-                  d: "There is no prescribing surface in the product, so nobody arrives having been promised a script by an algorithm.",
+                  d: "There is no prescribing feature in the product, so nobody arrives having been promised a script by software.",
                 },
                 {
                   t: "Unverified coverage",
-                  d: "If the payer did not return active benefits, the patient does not reach a booking screen.",
+                  d: "If the payer did not return active benefits, the patient never reaches a booking screen.",
                 },
               ].map((x) => (
                 <li key={x.t} className="flex gap-3">
@@ -136,12 +136,11 @@ export default function ForCliniciansPage() {
             This is a prototype, and we would rather say so.
           </h2>
           <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-ink-soft">
-            Covera was built at a hackathon. The eligibility integration is
-            real and runs against a live clearinghouse sandbox. The twelve
+            Covera was built at a hackathon. The eligibility integration is real
+            and runs against a live clearinghouse sandbox. The twelve
             psychiatrists in the network are invented, no appointment is
-            actually scheduled, and no clinician has been contacted. Walk the
-            patient flow and you will see exactly how much of it is working
-            software.
+            actually scheduled, and no clinician has been contacted. Walking the
+            patient flow will show you which parts are working software.
           </p>
           <Link
             href="/coverage"

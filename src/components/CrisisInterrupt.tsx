@@ -20,9 +20,9 @@ export function CrisisInterrupt({
           Let&apos;s get you to a person, not a form.
         </h1>
         <p className="mt-4 text-[17px] leading-relaxed text-ink">
-          {reason} You told us you&apos;ve had thoughts of being better off dead
-          or of hurting yourself. That deserves a real conversation right now —
-          not a waitlist and not an appointment three weeks out.
+          {reason} You told us you have had thoughts of being better off dead or
+          of hurting yourself. The people on the lines below are trained for
+          exactly this and can talk to you in the next few minutes.
         </p>
 
         <div className="mt-7 space-y-3">
@@ -75,9 +75,9 @@ export function CrisisInterrupt({
         </div>
 
         <p className="mt-7 text-[15px] leading-relaxed text-ink-soft">
-          We are not going to show you a booking button on this screen. Matching
-          you with an appointment is the wrong response to what you just told
-          us, and pretending otherwise would be worse than doing nothing.
+          There is no booking button on this screen. An appointment two weeks
+          from now is not a useful answer to what you just told us, so we are
+          not going to offer you one here.
         </p>
       </div>
 

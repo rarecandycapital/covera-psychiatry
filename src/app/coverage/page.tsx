@@ -150,8 +150,8 @@ export default function CoveragePage() {
             {result.active ? (
               <>
                 {result.payerName}
-                {result.planName ? ` · ${result.planName}` : ""} — verified in
-                real time, before you gave us an email address.
+                {result.planName ? ` · ${result.planName}` : ""} — verified with
+                your payer just now.
               </>
             ) : (
               <>
@@ -252,8 +252,7 @@ export default function CoveragePage() {
       </h1>
       <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
         No account, no email. We run a real eligibility check against your payer
-        and tell you what a visit costs before you answer a single clinical
-        question.
+        and tell you what a visit costs before asking you anything clinical.
       </p>
 
       <form
