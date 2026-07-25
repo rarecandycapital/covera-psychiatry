@@ -1,4 +1,5 @@
 import { CLINICIANS, type Clinician } from "./clinicians";
+import { STATES } from "./payers";
 
 // Deliberately rule-based, not a score. Every card shows the checks it passed, because
 // "here is a 0.87 match" is exactly the black box this product exists to replace.
@@ -88,7 +89,7 @@ export function matchClinicians({
     return b.yearsInPractice - a.yearsInPractice;
   });
 
-  const stateName = state;
+  const stateName = STATES.find((s) => s.code === state)?.name ?? state;
   const matches: Match[] = ranked.slice(0, 3).map((clinician) => {
     const nextSlot = soonestSlot(clinician);
     const reasons: MatchReason[] = [
