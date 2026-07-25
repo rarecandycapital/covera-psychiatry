@@ -72,15 +72,18 @@ export default function Home() {
                 psychiatry
               </p>
               <h1 className="font-display display-hero mt-7 text-[#faf7f2]">
-                Most psychiatrists don&apos;t take insurance. We check yours
-                first, in about 90 seconds.
+                90 seconds to a psychiatrist who takes your insurance.
               </h1>
-              <p className="mt-8 max-w-[46ch] text-[17px] leading-relaxed text-white/75">
+              <p className="mt-8 max-w-[48ch] text-[17px] leading-relaxed text-white/75">
                 Psychiatry has the lowest insurance-acceptance rate of any
-                medical specialty. The usual explanation is reimbursement, but
-                the bigger cost is administrative — verifying benefits, chasing
-                intake forms, re-documenting a history the patient already gave
-                someone else.
+                medical specialty. The crux of the issue is administrative:
+                verifying benefits, chasing intake forms, and re-documenting
+                history a patient already gave someone else.
+              </p>
+              <p className="mt-4 max-w-[48ch] text-[17px] leading-relaxed text-white/75">
+                Covera puts that work at the front of the process and turns it
+                into one record that flows downstream — to the eligibility
+                check, the screeners, and the clinician&apos;s note.
               </p>
 
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -195,15 +198,14 @@ export default function Home() {
               You find out about the money first
             </h3>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              Everywhere else you make an account, answer twenty questions,
-              upload a photo of your card, and find out around minute eighteen
-              that nobody takes your plan. The sequencing is a conversion
-              tactic. Sunk cost is what makes people finish the form.
+              Everywhere else, you make an account, answer twenty questions and
+              upload a photo of your card before anyone tells you nobody takes
+              your plan.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              We put the eligibility check on the first screen. It costs
-              nothing, and a bad answer arrives in ninety seconds rather than
-              twenty minutes.
+              Eligibility check on the first screen, at no cost. You get the
+              answer in ninety seconds instead of twenty minutes and an account
+              you did not want.
             </p>
             <Link
               href="/coverage"
@@ -225,16 +227,13 @@ export default function Home() {
               The intake arrives already done
             </h3>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              Ask a psychiatrist why they left insurance and paperwork usually
-              comes up before rates do. Every covered visit carries
-              verification, forms and re-documentation behind it, none of which
-              is billable.
+              Psychiatrists leave insurance over paperwork more often than over
+              rates, and every covered visit drags unbillable verification,
+              forms and re-documentation behind it.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              The intake a patient completes here arrives on the clinician side
-              as a pre-visit note: eligibility verified, screeners scored, the
-              items they endorsed most pulled out. That covers most of the
-              unbilled work before the visit starts.
+              The intake arrives on your side already done: eligibility
+              verified, screeners scored, top items pulled out.
             </p>
             <Link
               href="/for-clinicians"
@@ -284,12 +283,11 @@ export default function Home() {
       {/* Why restraint */}
       <Section number="03" label="Restraint">
         <h2 className="font-display display-section max-w-[18ch]">
-          Two places we deliberately refuse to convert you.
+          Two things we don&apos;t touch.
         </h2>
-        <p className="mt-8 max-w-[52ch] text-lg leading-relaxed text-ink-soft">
-          The companies that got into trouble in this category got there by
-          converting harder. We put the limits in the code rather than in a
-          policy document.
+        <p className="mt-8 max-w-[54ch] text-lg leading-relaxed text-ink-soft">
+          Covera is not a medical practice and holds no prescribing authority.
+          Both limits below are enforced in the code, not on a policy page.
         </p>
 
         <div className="mt-16 grid grid-cols-12 gap-x-6 gap-y-12">
@@ -316,11 +314,10 @@ export default function Home() {
               We do not prescribe anything
             </h3>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              Covera has no prescribing feature — screening and clinician
-              matching, nothing else. Several telepsychiatry companies built
-              their revenue on prescription volume and ended up under federal
-              investigation for it. We would rather not carry that pressure in
-              the business at all.
+              We hold no prescribing authority and employ no prescribers, so no
+              path through this product ends in a prescription. Several
+              telepsychiatry companies built their revenue on prescription
+              volume and drew federal scrutiny for it.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
               Medication decisions belong to the psychiatrist you are matched
