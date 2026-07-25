@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-// Honest capability badges — these describe what this build actually does. They are not
-// certifications, and they must never be dressed up as any.
+// Capability badges, not certifications. Each one describes something the build
+// actually does, so don't add anything here we can't point at in the code.
 const badges = [
   { label: "PHQ-9 / GAD-7", sub: "Validated instruments" },
   { label: "X12 270/271", sub: "Real-time eligibility" },
