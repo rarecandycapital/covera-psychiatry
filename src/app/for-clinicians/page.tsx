@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Figure } from "@/components/Figure";
 
 const burden = [
   {
@@ -18,20 +19,34 @@ const burden = [
 export default function ForCliniciansPage() {
   return (
     <div>
-      <section className="mx-auto max-w-[1100px] px-5 pb-14 pt-16 sm:px-8 sm:pt-24">
-        <p className="text-[12.5px] font-semibold uppercase tracking-[0.16em] text-accent">
-          For clinicians
-        </p>
-        <h1 className="font-display mt-5 max-w-3xl text-[2.4rem] font-semibold leading-[1.06] sm:text-[3.2rem]">
-          You did not leave insurance over the rates. You left over everything
-          attached to the rates.
-        </h1>
-        <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          The delta between a network rate and your cash rate is real, but it is
-          rarely the thing that decides it. What decides it is the unbilled
-          half-hour per patient: verification, forms, follow-up, documentation
-          rebuilt from scratch. Covera is built to take that half-hour back.
-        </p>
+      <section className="mx-auto max-w-[1100px] px-5 pb-14 pt-14 sm:px-8 sm:pt-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+          <div>
+            <p className="text-[12.5px] font-semibold uppercase tracking-[0.16em] text-accent">
+              For clinicians
+            </p>
+            <h1 className="font-display mt-5 text-[2.4rem] font-semibold leading-[1.06] sm:text-[3.1rem]">
+              You did not leave insurance over the rates. You left over
+              everything attached to the rates.
+            </h1>
+            <p className="mt-7 text-lg leading-relaxed text-ink-soft">
+              The delta between a network rate and your cash rate is real, but
+              it is rarely the thing that decides it. What decides it is the
+              unbilled half-hour per patient: verification, forms, follow-up,
+              documentation rebuilt from scratch. Covera is built to take that
+              half-hour back.
+            </p>
+          </div>
+
+          <Figure
+            src="/images/clinician-office.webp"
+            alt="A psychiatrist reading from a tablet in a quiet home office"
+            ratio="4 / 5"
+            priority
+            note="Psychiatrist 40s in quiet home office, reading tablet, soft daylight"
+            className="shadow-soft"
+          />
+        </div>
       </section>
 
       <section className="border-y border-line bg-bg-warm">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Figure } from "@/components/Figure";
 
 const metrics = [
   {
@@ -45,45 +46,58 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="mx-auto max-w-[1100px] px-5 pb-16 pt-16 sm:px-8 sm:pb-24 sm:pt-24">
-        <p className="text-[12.5px] font-semibold uppercase tracking-[0.16em] text-sage">
-          Insurance-first psychiatry
-        </p>
-        <h1 className="font-display mt-5 max-w-4xl text-[2.6rem] font-semibold leading-[1.04] sm:text-[3.6rem] lg:text-[4rem]">
-          Most psychiatrists stopped taking insurance. The reason is boring, and
-          fixable.
-        </h1>
-        <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft sm:text-xl">
-          Psychiatry has the lowest insurance-acceptance rate of any medical
-          specialty. It isn&apos;t greed. Verifying benefits, chasing intake
-          forms, and rebuilding a history the patient already told somebody else
-          costs more per visit than the network rate pays back. So the rational
-          move is to go cash-pay, and thousands of clinicians have.
-        </p>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft sm:text-xl">
-          Covera does that administrative work up front, for both sides of the
-          appointment.
-        </p>
+      <section className="mx-auto max-w-[1100px] px-5 pb-16 pt-14 sm:px-8 sm:pb-24 sm:pt-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+          <div>
+            <p className="text-[12.5px] font-semibold uppercase tracking-[0.16em] text-sage">
+              Insurance-first psychiatry
+            </p>
+            <h1 className="font-display mt-5 text-[2.6rem] font-semibold leading-[1.04] sm:text-[3.4rem]">
+              Most psychiatrists stopped taking insurance. The reason is boring,
+              and fixable.
+            </h1>
+            <p className="mt-7 text-lg leading-relaxed text-ink-soft">
+              Psychiatry has the lowest insurance-acceptance rate of any medical
+              specialty. It isn&apos;t greed. Verifying benefits, chasing intake
+              forms, and rebuilding a history the patient already told somebody
+              else costs more per visit than the network rate pays back. So the
+              rational move is to go cash-pay, and thousands of clinicians have.
+            </p>
+            <p className="mt-5 text-lg leading-relaxed text-ink-soft">
+              Covera does that administrative work up front, for both sides of
+              the appointment.
+            </p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-          <Link
-            href="/coverage"
-            className="rounded-card bg-brand px-8 py-4 text-center text-base font-medium text-white shadow-soft transition-colors hover:bg-brand-hover"
-          >
-            Check my coverage
-          </Link>
-          <Link
-            href="/for-clinicians"
-            className="rounded-card border border-line bg-surface px-8 py-4 text-center text-base font-medium transition-colors hover:bg-brand-soft"
-          >
-            I&apos;m a clinician
-          </Link>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/coverage"
+                className="rounded-card bg-brand px-8 py-4 text-center text-base font-medium text-white shadow-soft transition-colors hover:bg-brand-hover"
+              >
+                Check my coverage
+              </Link>
+              <Link
+                href="/for-clinicians"
+                className="rounded-card border border-line bg-surface px-8 py-4 text-center text-base font-medium transition-colors hover:bg-brand-soft"
+              >
+                I&apos;m a clinician
+              </Link>
+            </div>
+            <p className="mt-4 text-sm text-ink-faint">
+              About 90 seconds. No account, no card, no email.
+            </p>
+          </div>
+
+          <Figure
+            src="/images/hero-patient.webp"
+            alt="A woman at a kitchen table in morning light, checking her phone"
+            ratio="4 / 5"
+            priority
+            note="Hero: woman early 30s at kitchen table, morning light, calm and relieved"
+            className="shadow-soft"
+          />
         </div>
-        <p className="mt-4 text-sm text-ink-faint">
-          About 90 seconds. No account, no card, no email.
-        </p>
 
-        <div className="mt-10 flex flex-wrap gap-x-7 gap-y-2.5 text-[13.5px] text-ink-soft">
+        <div className="mt-14 flex flex-wrap gap-x-7 gap-y-2.5 border-t border-line pt-7 text-[13.5px] text-ink-soft">
           {[
             "Real-time payer eligibility",
             "Validated clinical screeners",
@@ -133,6 +147,13 @@ export default function Home() {
         </h2>
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
           <div className="rounded-card border border-line bg-surface p-7 shadow-soft sm:p-9">
+            <Figure
+              src="/images/patient-hands.webp"
+              alt="Hands holding a phone at a desk with an insurance card nearby"
+              ratio="16 / 10"
+              note="Hands holding phone, insurance card on table, no face"
+              className="mb-7"
+            />
             <p className="text-[12.5px] font-semibold uppercase tracking-[0.14em] text-brand">
               For patients
             </p>
@@ -160,6 +181,13 @@ export default function Home() {
           </div>
 
           <div className="rounded-card border border-line bg-surface p-7 shadow-soft sm:p-9">
+            <Figure
+              src="/images/clinician-desk.webp"
+              alt="A clinician reading from a tablet at a desk before a session"
+              ratio="16 / 10"
+              note="Over-the-shoulder, clinician at laptop, screen not legible"
+              className="mb-7"
+            />
             <p className="text-[12.5px] font-semibold uppercase tracking-[0.14em] text-accent">
               For clinicians
             </p>
